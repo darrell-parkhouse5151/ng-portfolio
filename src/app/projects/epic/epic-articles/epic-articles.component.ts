@@ -10,6 +10,7 @@ export class EpicArticlesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+      document.body.classList.add('epic');
   }
 
 }
