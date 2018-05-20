@@ -2,7 +2,7 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-    selector: '[appToggleStar]'
+    selector: '[toggle-star]'
 })
 export class ToggleStarDirective {
 
