@@ -1,0 +1,64 @@
+@import "../../../../partials/vars";
+
+.new-email-form {
+    width: 500px;
+    border: 2px solid $base-border-color;
+    margin: 0 auto;
+    padding: 30px;
+    color: #808080;
+    font-size: 14px;
+    overflow: hidden;
+
+    input,
+    textarea {
+        background-color:transparent;
+        border-color: $base-border-color;
+    }
+
+    textarea {
+        height: 200px;
+        resize: none;
+    }
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .send-email-btn {
+        background-color: $base-btn-bg;
+        color: #f2f2f2;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .cancel-btn {
+        background-color: $project;
+        color: #f2f2f2;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+    .attachment-btn {
+        border: 2px solid $base-border-color;
+        padding: 10px;
+        margin-right: 10px;
+        background-color: #262626;
+
+        .attachment-icon {
+            background: url(../../../../../assets/images/email/attachment-icon.png) no-repeat;
+            width: 20px;
+            height: 11px;
+        }
+    }
+
+    .send-email-btn,
+    .cancel-btn,
+    .attachment-btn {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .buttons {
+        float: right;
+    }
+}
