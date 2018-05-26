@@ -5,7 +5,9 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs';
 import { LoggingService } from './logging.service';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class EmailService {
     emailCollection: AngularFirestoreCollection<Email>;
     emailDoc: AngularFirestoreDocument<Email>;
