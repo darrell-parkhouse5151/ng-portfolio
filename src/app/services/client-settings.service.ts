@@ -2,7 +2,9 @@
 import { Injectable } from '@angular/core';
 import { ClientSettings } from '../models/client-settings';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class ClientSettingsService {
     settings: ClientSettings = {
         allowRegistration: false,
