@@ -9,7 +9,7 @@ export class ClientSettingsService {
     settings: ClientSettings = {
         allowRegistration: false,
         disableBalanceOnAdd: true,
-        disableBalanceOnEdit: false
+        disableBalanceOnEdit: true
     };
 
     constructor() {
