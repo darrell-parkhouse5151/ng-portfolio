@@ -5,7 +5,9 @@ import {Observable} from 'rxjs/Observable';
 
 import {Client} from '../models/client';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class ClientService {
     clientCollection: AngularFirestoreCollection<Client>;
     clientDoc: AngularFirestoreDocument<Client>;
