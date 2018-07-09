@@ -1,3 +1,36 @@
-<p>
-  employee-list works!
-</p>
+<div class="row">
+    <div class="col-md-6">
+        <h2><i class="fa fa-users"></i> Employees</h2>
+        <a class="btn btn-primary btn-lg" routerLink="/employee/add">New Employee</a>
+    </div>
+    <div class="col-md-6">Our Total Employee Salaries <strong>{{ totalSalary | currency:"USD":"symbol" }}</strong></div>
+</div>
+<table *ngIf="employees?.length > 0; else noEmployees">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Office</th>
+            <th>Salary</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{ employee.first_name }}</td>
+            <td>{{ employee.last_name }}</td>
+            <td>{{ employee.office }}</td>
+            <td>{{ employee.salary | currency:"USD":"symbol" }}</td>
+            <td>
+                <a routerLink="/employee{{employee.id}}" class="btn btn-secondary btn-sm">
+                    <i class="fa fa-arrow-circle-o-right"></i> Details
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #noEmployees>
+    <hr>
+    <h5>There are no employees in the system</h5>
+</ng-template>
