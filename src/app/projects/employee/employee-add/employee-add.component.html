@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-md-6">
+        <a routerLink="/employees" class="btn btn-link">
+            <i class="fa fa-arrow-circle-o-left"></i>
+            Back to Employees
+        </a>
+    </div>
+    <div class="col-md-6"><!-- currently empty ---></div>
+</div>
+<div class="card">
+    <div class="card-header">Add Employee</div>
+    <div class="card-body">
+        <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                    type="text"
+                    id="firstName"
+                    class="form-control"
+                    #employeeFirstName="ngModel"
+                    [ngClass]="{'is-valid': employeeFirstName.errors && employeeFirstName.touched}"
+                    name="firstName"
+                    [(ngModel)]="employee.first_name"
+                    minlength="2"
+                    required>
+                <div [hidden]="!employeeFirstName.errors?.required" class="invalid-feedback">
+                    First name is required
+                </div>
+                <div [hidden]="!employeeFirstName.errors?.minLength" class="invalid-feedback">
+                    Must be at least 2 characters
+                </div>
+            </div> <!-- first name --->
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                    type="text"
+                    id="lastName"
+                    class="form-control"
+                    #employeeLastName="ngModel"
+                    [ngClass]="{'is-valid': employeeLastName.errors && employeeLastName.touched}"
+                    name="lastName"
+                    [(ngModel)]="employee.last_name"
+                    minlength="2"
+                    required>
+                <div [hidden]="!employeeLastName.errors?.required" class="invalid-feedback">
+                    Last name is required
+                </div>
+                <div [hidden]="!employeeLastName.errors?.minLength" class="invalid-feedback">
+                    Must be at least 2 characters
+                </div>
+            </div> <!-- last name --->
+
+            <div class="form-group">
+                <label for="office">Office</label>
+                <input
+                    type="text"
+                    id="office"
+                    class="form-control"
+                    #employeeOffice="ngModel"
+                    [ngClass]="{'is-valid': employeeOffice.errors && employeeOffice.touched}"
+                    name="office"
+                    [(ngModel)]="employee.office"
+                    minlength="2"
+                    required>
+                <div [hidden]="!employeeOffice.errors?.required" class="invalid-feedback">
+                    Office field is required
+                </div>
+                <div [hidden]="!employeeOffice.errors?.minLength" class="invalid-feedback">
+                    Must be at least 2 characters
+                </div>
+            </div> <!-- office --->
+
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input
+                    type="text"
+                    id="salary"
+                    class="form-control"
+                    #employeeSalary="ngModel"
+                    name="salary"
+                    [ngClass]="{'is-valid': employeeSalary.errors && employeeSalary.touched}"
+                    [(ngModel)]="employee.salary"
+                    required>
+                <div [hidden]="!employeeSalary.errors?.required" class="invalid-feedback">
+                    The salary field is required"
+                </div>
+            </div> <!-- salary --->
+            <input type="submit" class="btn btn-primary btn-block" value="Add new Employee">
+
+        </form>
+    </div>
+</div>
