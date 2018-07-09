@@ -12,8 +12,8 @@ export class ToggleSelectedDirective {
   onToggle($event: any) {
       $event.preventDefault();
 
-      this.elem.nativeElement.classList.toggle('combobox-single-is-selected');
-      this.elem.nativeElement.classList.toggle('combobox-single-not-selected');
+      this.elem.nativeElement.classList.toggle('checkbox-single-is-selected');
+      this.elem.nativeElement.classList.toggle('checkbox-single-not-selected');
   }
 
 }
